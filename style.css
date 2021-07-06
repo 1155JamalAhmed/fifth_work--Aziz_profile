@@ -1,0 +1,628 @@
+/* this is created as mobile first website */
+:root {
+  --main-color: crimson;
+  --mobile__nav--color: rgba(255, 193, 205, 0.863);
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+
+* {
+  box-sizing: border-box;
+}
+
+/*--------------------- applying to whole body ----------------------------*/
+body {
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  overflow-x: hidden;
+}
+.backdrope {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 498;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*--------------------- nav bar started ------------------------------------*/
+.main-nav {
+  background-color: crimson;
+  background-color: var(--main-color);
+  padding: 0.5rem 0 0.5rem 0;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.manu-button {
+  margin: 0 1rem;
+}
+.manu-button div {
+  width: 1.8rem;
+  border: 2px solid white;
+  margin: 0.3rem 0;
+}
+
+.main-nav__logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.main-nav__menu {
+  padding-right: 4rem;
+}
+.main-nav__menu-items {
+  display: none;
+}
+
+/* this will be applied on any a within button and also on main nav item a */
+.main-nav__menu-item a,
+button a {
+  text-decoration: none;
+  color: white;
+}
+.mobile-nav__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0vw;
+  height: 100vh;
+  background-color: #ffd7d7;
+  background-color: var(--mobile__nav--color);
+  z-index: 499;
+  display: none;
+  transition: width;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+}
+/* apllied by using javascript */
+.mobile-nav__menu-flex {
+  width: 80vw;
+}
+
+
+.mobile-nav__menu-flex1 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-nav__menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+.mobile-nav__menu-item {
+  font-size: x-large;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.mobile-nav__menu-item a {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 0.2rem;
+}
+.mobile-nav__menu-item a:hover,
+.mobile-nav__menu-item a:active {
+  color: crimson;
+  color: var(--main-color);
+  border-bottom: 5px solid crimson;
+  border-color: var(--main-color);
+}
+@media (min-width: 50rem) {
+  .main-nav{
+    justify-content: space-between;
+  }
+  .manu-button {
+    display: none;
+  }
+  .main-nav__logo {
+    margin: 0 0 0 2rem;
+  }
+  .main-nav__menu-items {
+    display: inline-block;
+    list-style: none;
+    color: white;
+    padding: 0;
+    margin: 0;
+  }
+  .main-nav__menu-item {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+  .main-nav__menu-item a {
+    padding-bottom: 0.2rem;
+
+  }
+  .main-nav__menu-item a:hover,
+  .main-nav__menu-item a:active {
+    border-bottom: 5px solid white;
+
+  }
+}
+
+/*--------------------------------------  Banner Image ----------------*/
+.banner {
+  background: url("Images/banner.jpg") left 20% top 0 /cover no-repeat;
+  background-clip: border-box;
+  width: 100vw;
+  height: 100vh;
+}
+@media (min-width: 40rem){ 
+  .banner {
+    background-position: left 10% top 30%;
+  }
+}
+.banner-title {
+  display: inline-block;
+  color: white;
+  position: relative;
+  top: 60%;
+  left: 5%;
+}
+.banner-title h3 {
+  margin: 0;
+}
+.banner-title h1 {
+  margin: 0.3rem 0 0.3rem 0;
+}
+.banner-title h2 {
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 40rem){
+  .banner-title h3 {
+    font-size: 1.5rem;
+  }
+  .banner-title h1 {
+    font-size: 3rem;
+  }
+  .banner-title h2 {
+    font-size: 2rem;
+  }
+}
+/* this will be applied on all the buttons */
+.button-styling {
+  color: white;
+  background-color: crimson;
+  background-color: var(--main-color);
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border: 2px solid #00000010;
+  border-radius: 10px 10px 10px 10px;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.hire-me {
+  animation: button-animation 500ms 3s 4 ease-out none;
+}
+@keyframes button-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+/* ------------------------------------------about section ------------- */
+
+.about {
+  margin-top: 5rem;
+}
+/* this is applied on all the sections */
+.heading {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.below-heading {
+  text-align: center;
+}
+.below-heading span {
+  display: block;
+}
+.sub-heading {
+  color: crimson;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.before,
+.after {
+  width: 10rem;
+  margin: 0.5rem auto 0.5rem auto;
+  border: 2px solid rgba(131, 120, 120, 0.562);
+}
+@media (min-width: 19rem) {
+  
+.below-heading span {
+  display: inline-block;
+}
+.sub-heading {
+  display: inline-block;
+  vertical-align: middle;
+}
+  .before,
+  .after {
+    display: inline-block;
+    width: 5rem;
+    vertical-align: middle;
+  }
+}
+/* till here */
+
+.about-content {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content__image-container {
+  background: url("Images/profile-1.jpeg") left 100% bottom 80% / cover;
+  width: 100%;
+  box-shadow: 1px 1px 10px 2px grey;
+  border-radius: 2px 2px 2px 2px;
+  height: 22rem;
+ 
+}
+
+.about-content__Content {
+  padding: 1rem;
+  width: 100%;
+  text-align: justify;
+}
+.about-content__Content > h1 {
+  text-align: left;
+  font-size: x-large;
+}
+@media (min-width: 40rem) {
+  .about-content__image-container {
+    width: 60%;
+    border-radius: 10px 10px 10px 10px;
+  }
+  .about-content__Content {
+    width: 90%;
+  }
+}
+
+@media (min-width: 57rem) {
+  .about-content {
+    flex-direction: row;
+  }
+  .about-content__image-container {
+    height: 24rem;
+    width: 30%;
+  }
+  .about-content__Content {
+    width: 40%;
+    margin-left: 2rem;
+  }
+}
+
+/*---------------------------------------- service container ------------------ */
+.service-container {
+  margin-top: 5rem;
+  padding: 3rem 0;
+  background-color: rgb(22, 21, 21);
+  background-image: linear-gradient(to left, #0808089a, #0c0404a8, #0a0707);
+  text-align: center;
+}
+
+.make-service__white {
+  color: white;
+}
+.make-service__flex {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.service-box {
+  margin-bottom: 1rem;
+  color: white;
+  background-color: rgba(150, 148, 148, 0.151);
+  padding: 1rem;
+  width: 90%;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+}
+.service-box h1 {
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 56rem){
+  .make-service__flex {
+    flex-direction: row;
+  }
+  .service-box {
+    margin-bottom: 0;
+    margin-left: 1rem;
+    width: 25%;
+  }
+  .web-design__service {
+    margin-left: 0;
+  }
+}
+/*--------------- skills section -------------*/
+.skills {
+  text-align: center;
+  margin-top: 5rem;
+}
+.skills-content {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.desc-of__skills {
+  width: 80%;
+  text-align: justify;
+}
+.desc-of__skills p {
+  line-height: 1.7rem;
+}
+.read-more_button {
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+.skills-title {
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+  display: inline-block;
+  text-align: left;
+}
+.skills-level {
+  margin-top: 2rem;
+  width: 80%;
+  text-align: left;
+}
+@media (min-width: 57rem) {
+  .skills-content {
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .desc-of__skills {
+    width: 40%;
+  }
+  .skills-level {
+    margin-left: 2rem;
+    width: 40%;
+  }
+}
+.bar {
+  width: 100%;
+  background-color: rgba(192, 191, 191, 0.651);
+}
+.bar-progress {
+  border: 2px solid crimson;
+  border-color: var(--main-color);
+}
+.progress-html {
+  width: 90%;
+}
+.progress-css {
+  width: 60%;
+}
+.progress-javascript {
+  width: 80%;
+}
+.progress-php {
+  width: 50%;
+}
+.progress-mysql {
+  width: 70%;
+}
+.position {
+  position: relative;
+}
+.percentage {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* -------------------------- team section ---------------------- */
+.team-container {
+  margin-top: 5rem;
+  padding: 2rem 0;
+  background-color: #161515;
+  background-image: linear-gradient(to left, #0808089a, #0c0404a8, #0a0707);
+}
+.team-heading {
+  margin: 1rem 0;
+}
+.make-team__white {
+  color: white;
+}
+.make-team__flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-box {
+  margin-bottom: 1rem;
+  color: white;
+  background-color: rgba(150, 148, 148, 0.151);
+  padding: 1rem;
+  width: 90%;
+  text-align: center;
+  border-radius: 2px 2px 2px 2px;
+}
+@media (min-width: 62.5rem) {
+  .make-team__flex {
+    flex-direction: row;
+    align-content: baseline;
+
+  }
+  .team-box {
+    margin: 0;
+    margin-left: 1rem;
+    width: 25%;
+  }
+}
+.team-box h1 {
+  margin-top: 0.2rem;
+}
+.image-container {
+  border: 5px solid crimson;
+  border-color: var(--main-color);
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+  margin: auto;
+}
+.member-one__image-container {
+  background: url("Images/profile-1.jpeg") center/cover;
+}
+.member-two__image-container {
+  background: url("Images/profile-2.jpeg") center/cover;
+}
+.member-three__image-container {
+  background: url("Images/profile-3.jpeg") center/cover;
+}
+
+/*------------------------- contact section ----------------------------*/
+.contact {
+  margin-top: 5rem;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.column-one {
+  width: 90%;
+}
+.column-one p {
+  line-height: 1.8rem;
+  text-align: justify;
+  color: rgb(70, 69, 69);
+}
+.column-one__internal-part {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.column-one__internal-part .image {
+  width: 2rem;
+}
+.column-one__internal-part .content {
+  margin-left: 1rem;
+}
+.content h4 {
+  margin: 0.3rem 0;
+}
+.internal-part__color {
+  color: grey;
+  font-weight: normal;
+}
+/*column two */
+.message-me {
+  width: 90%;
+}
+.first-line {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.message-me input {
+  height: 2.8rem;
+  font-size: larger;
+  border-radius: 8px;
+  padding: 0.5rem;
+  border: 2px solid rgba(170, 170, 170, 0.493);
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.message-me .subject {
+  display: block;
+}
+
+.message-me .message {
+  display: block;
+  font-size: x-large;
+  border-radius: 8px;
+  padding: 0.5rem;
+  border: 2px solid rgba(170, 170, 170, 0.493);
+  width: 100%;
+  height: 6rem;
+  color: grey;
+}
+.send-message {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: medium;
+  font-weight: normal;
+  border-radius: 7px;
+  background-color: crimson;
+  background-color: var(--main-color);
+  color: white;
+  border: 2px solid black;
+}
+@media (min-width: 40rem) {
+  .first-line {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .message-me input {
+    width: 48%;
+  }
+  .message-me .subject  {
+    width: 100%;
+  }
+  
+}
+
+@media (min-width: 62rem) {
+  .center {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+  .column-one {
+    width: 40%;
+  }
+  .message-me {
+    width: 40%;
+  }
+
+}
+/*-------------------------- footer ----------------*/
+.footer {
+  background-color: rgb(15, 15, 15);
+  padding: 0.7rem;
+  color: white;
+  text-align: center;
+  margin-top: 5rem;
+}
+.footer p {
+  margin: 0;
+}
+.footer span {
+  color: crimson;
+  color: var(--main-color)
+}
